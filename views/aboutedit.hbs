@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit About Us</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+         
+        <link rel="stylesheet" href="../css/index2_css.css">
+        <link rel="stylesheet" href="../css/landing_css.css">
+        <link rel="stylesheet" href="../css/aboutedit_css.css">
+        
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <div class="con">
+            <div class="main_header_line"></div>
+            <div class="main_header">
+                <nav class="navbar navbar-expand-lg">
+                    <a href="/"class="companyname">RIPARIP ENTERPRISES</a>
+                </nav>  
+            </div>
+
+            <div class="main_header_line"></div>
+
+
+            <nav class="navbar navbar-expand-lg category">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#category_list" aria-controls="category_list" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" style="color: white;"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="category_list">
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/products" id="category_dropdown" role="button">
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/services" id="category_dropdown" role="button">
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/about" id="category_dropdown" role="button">
+                                About Us
+                            </a>
+                        </li>
+                    </ul>  
+                </div>
+            </nav>
+
+            <div class="aboutus-sec content-row py-5 px-5">
+                <div class="row" id="top-texts">
+                    <h3>About Us</h3>
+                    <div class="edit-abtcontainer">
+                        <a href="#modal3" data-toggle="modal" data-target="#modal3">
+                            <div id="edit-abouttext">Edit About Us</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <section id="hero" class="d-flex justify-content-center" style="height: 180px;" >
+                  <img src="{{logo}}" class="logo">
+            </section>
+
+            <div class="container-fluid about_con">
+                <div class="about_company">
+                    {{aboutcompany}}
+                </div>
+               
+            </div>
+
+            <div class="container p-5 about_company_slogan">
+                “{{slogan}}”
+            </div>
+
+            <div class="container-fluid about_con">
+                <div style="text-align: center; font-size: 22px; font-weight: 800;">
+                    The owner
+                </div>
+                <div class="about_owner">
+                    {{aboutowner}}
+                </div>
+            </div>
+
+            <div class="container-fluid about_con" style="background-color: #f9f9f9;">
+                <div style="text-align: center; font-size: 22px; font-weight: 800;">
+                    Contact us
+                </div>
+                <div class="about_contacts">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <i class="fa fa-phone" style="margin-bottom:-20px; font-size: 25px; color: black; padding-left: 20px; padding-right: 20px;"></i>
+                            <div class="row">
+                                <div class="col">
+                                    {{contact1}}
+                                </div>
+                                <div class="col">
+                                    {{contact2}}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <i class="fa fa-envelope" style="margin-bottom:-20px; font-size: 25px; color: black; padding-left: 20px; padding-right: 20px;"></i>
+                            <div>
+                                {{email}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3" aria-hidden="true">
+                <div class="modal-dialog modal-md" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editAboutUsModal">Edit About Us</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="aboutus">
+                            <div class="logo">
+                                Upload Logo <br><br>
+                                <img id="logo-pic" src="../images/grey.png" height="150" width="150"><br><br>
+                            </div>
+                            <form method="POST" action="/editabout" enctype="multipart/form-data">
+                                <input type="file" id="editlogopic" name="editlogopic"><br><br>
+                                <label>About the Company</label><br>
+                                <textarea name="editaboutcompany" id="editaboutcompany" wrap="soft" required>{{aboutcompany}}</textarea> <br><br>
+                                <label>Slogan</label><br>
+                                <textarea id="editslogan" name="editslogan" wrap="soft" required>{{slogan}}</textarea><br><br>
+                                <label>About the Owner</label><br>
+                                <textarea name="editaboutowner" id="editaboutowner" wrap="soft" required>{{aboutowner}}</textarea> <br><br>
+                                Contact Details <br><br>
+                                <label>Contact Numbers</label><br>
+                                <!-- <label for="editcontact2">Contact No. 2</label><br> -->
+                                <div class="contact">
+                                    <input type="text" id="editcontact1" name="editcontact1" value="{{contact1}}" required><br><br>
+                                    <input type="text" id="editcontact2" name="editcontact2" value="{{contact2}}" required>
+                                </div>
+                                <br>
+                                <label for="editemail">Email</label><br>
+                                <input type="text" id="editemail" name="editemail" value="{{email}}" required><br><br>
+                                <input type="submit" id="btnsavechanges" value="Save Changes">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+
+
+        </div>
+        <script src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

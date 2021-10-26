@@ -1,0 +1,72 @@
+<div class="main_header">
+    <nav class="navbar navbar-expand-lg">
+        <a href="/"class="companyname">RIPARIP ENTERPRISES</a>
+        <div class="form-inline my-0 my-lg-0 mr-auto search">
+            <form action="">   
+                <input class="form-control mr-auto"type="text" method="GET" name="search" placeholder="Search">
+                <button type="submit" value="Search"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+        <div class="navbar-nav">
+            <div class="nav-item dropdown dropdown-cart-icon">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> 
+                    <i class="fa fa-shopping-cart" style="font-size: 25px; color: black;"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right dropdown-cart" id="dropd-layout" role="menu">
+                <script>
+                    for(var i=0; i<localStorage.length; i++) {
+                        var curItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+                        if (curItem.type == "product") {
+                            var pname = curItem.productname;
+                            var pmod = curItem.model;
+                            var pqty = curItem.qty;
+                            console.log(pname);
+
+                            var cart = document.getElementById("dropd-layout");
+                            var item = document.createElement("li");
+                            item.innerHTML = `<label for="cart_product">
+                                                <span class="item">
+                                                    <span class="item-left">
+                                                        <span class="item-info">
+                                                            <span style="font-weight: 800;">` + pname + `</span>
+                                                            <div style="padding: 10px 0px;">Model: ` + pmod + `</div>
+                                                            <div>Qty: ` + pqty + `</div>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                            <span class="item-right">
+                                                    <button onclick='localStorage.removeItem("` + localStorage.key(i) + `"); window.location.reload(); alert("Item successfully deleted.");' class="fa fa-close" style="background-color: transparent; border: none;"></button>  
+                                            </span>`;
+                            cart.appendChild(item);
+                        }
+                        else {
+                            var sname = curItem.servicename;
+                            console.log(sname);
+
+                            var cart = document.getElementById("dropd-layout");
+                            var item = document.createElement("li");
+                            item.innerHTML = `<label for="cart_service">
+                                                <span class="item">
+                                                    <span class="item-left">
+                                                        <div style="font-weight: 800;">` + sname + `</div>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                            <span class="item-right">
+                                                    <button onclick='localStorage.removeItem("` + localStorage.key(i) + `"); window.location.reload(); alert("Item successfully deleted.");' class="fa fa-close" style="background-color: transparent; border: none;"></button>  
+                                            </span>`;
+                            cart.appendChild(item);
+                        } 
+                    }
+                </script>
+
+                <li class="divider"></li>
+                <li class="to_checkout"><a href="/checkout">Check Out</a></li>
+                </ul>
+
+            </div>
+        </div> 
+    </nav>
+</div>

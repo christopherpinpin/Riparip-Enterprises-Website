@@ -1,0 +1,21 @@
+<label for="cart_product">
+    <span class="item">
+        <span class="item-left">
+            <span class="item-info">
+                <span style="font-weight: 800;">{{productname}}</span>
+                <div style="padding: 10px 0px;">Model: {{model}}</div>
+                <div>Qty: {{qty}}</div>
+            </span>
+        </span>
+    </span>
+</label>
+<span class="item-right">
+    <form method="post" action="/deleteprodcart/{{productname}}/{{model}}">
+    <button onclick="deleteItem()" class="fa fa-close" style="background-color: transparent; border: none;"></button>
+    </form>
+    <script>
+        function deleteItem() {
+            alert("Item has been deleted from cart.");
+        }
+    </script>
+</span>

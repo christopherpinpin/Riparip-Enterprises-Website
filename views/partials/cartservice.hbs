@@ -1,0 +1,12 @@
+<label for="cart_service">
+    <span class="item">
+        <span class="item-left">
+            <div style="font-weight: 800;">{{servicename}}</div>
+        </span>
+    </span>
+</label>
+<span class="item-right">
+    <form method="post" action="/deleteservcart/{{servicename}}">
+    <button onclick="deleteItem()" type="submit" class="fa fa-close" style="background-color: transparent; border: none;"></button>
+    </form>
+</span>

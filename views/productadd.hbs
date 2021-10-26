@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add and Edit Products</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+         
+        <link rel="stylesheet" type="text/css" media="all" href="/css/index2_css.css">
+        <link rel="stylesheet" href="/css/productadd_css.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="con">
+            
+            <div class="main_header_line"></div>
+            <div class="main_header">
+                <nav class="navbar navbar-expand-lg">
+                    <a href="/"class="companyname">RIPARIP ENTERPRISES</a>
+            </div>
+            <div class="main_header_line"></div>
+            
+            <nav class="navbar navbar-expand-lg category">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#category_list" aria-controls="category_list" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" style="color: white;"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="category_list">
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/products" id="category_dropdown" role="button">
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/services" id="category_dropdown" role="button">
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/about" id="category_dropdown" role="button">
+                                About Us
+                            </a>
+                        </li>
+                    </ul>  
+                </div>
+            </nav>
+
+            <div class="products-sec content-row py-5 px-5">
+                <div class="row" id="top-texts">
+                    <h3>Products</h3>
+                    <a href="#modal3" data-toggle="modal" data-target="#modal3">
+                        <div id="edit-cat-text">Edit Categories and Brands</div>
+                    </a>
+                </div>
+
+                <!-- Edit Product -->
+                <div class="row">
+                    <!-- Add Product -->
+                    <div class="col-sm-4 col-lg-3 py-2">
+                        <div class="card" id="card-style">
+                            <a href="#modal2" data-toggle="modal" data-target="#modal2">
+                                <div class="add">
+                                <i class="fa fa-plus" id="add-icon" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    {{#each products}}
+                    {{>product}}
+                    {{/each}}
+                </div>
+            </div>
+
+        <!-- Edit Product Modal -->
+            <!-- NOTE: Add to each handlebars edit product -->
+            {{#each products}}
+            <div class="modal fade" id="{{this.productname}}{{this.model}}" tabindex="-1" role="dialog" aria-labelledby="{{this.productname}}{{this.model}}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editProductModal">Edit Product</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="edit-product">
+                            <div class="row" id="edit-row">
+                                <div>
+                                    <img id="product-pic" src="{{this.prodpic}}" height="150" width="150"><br><br>
+                                </div>
+                            </div>
+                            <div class="row" id="edit-row">
+                                <form class="formeditproduct" method="post" action="/editproduct/{{this.productname}}/{{this.model}}" enctype="multipart/form-data">
+                                    <input type="file" id="editimgfile" name="editimgfile"><br><br>
+                                    <label for="editprodname">Name of Product</label><br>
+                                    <input type="text" id="editprodname" name="editprodname" value="{{this.productname}}"><br><br>
+                                    <label for="editprodmodel">Model</label><br>
+                                    <input type="text" id="editprodmodel" name="editprodmodel" value="{{this.model}}"><br><br>
+                                    <label for="editprodcat">Category</label><br>
+                                    <select id="editprodcat" name="editprodcat" value="{{this.category}}">
+                                        {{#each ../categories}}
+                                        {{#ifEquals ../this.category this.categoryname}}
+                                        <option value="{{this.categoryname}}" selected>{{this.categoryname}}</option>
+                                        {{else}}
+                                        <option value="{{this.categoryname}}">{{this.categoryname}}</option>
+                                        {{/ifEquals}}
+                                        {{/each}}
+                                    </select><br><br>
+                                    <label for="editprodcat">Brand</label><br>
+                                    <select id="editprodbrand" name="editprodbrand" value="{{this.brand}}">
+                                        {{#each ../brands}}
+                                        {{#ifEquals ../this.brand this.brandname}}
+                                        <option value="{{this.brandname}}" selected>{{this.brandname}}</option>
+                                        {{else}}
+                                        <option value="{{this.brandname}}">{{this.brandname}}</option>
+                                        {{/ifEquals}}
+                                        {{/each}}
+                                    </select><br><br>
+                                    {{!-- <label for="editproddesc">Product Description</label><br>
+                                    <input type="text" id="editproddesc" name="editproddesc" value="Description"> --}}
+                                    <label>Product Description</label> <br>
+                                    <textarea name="editproddesc" id="editproddesc" wrap="soft">{{this.productdesc}}</textarea>
+                                    <a href="/admin/products" id="btndeleteprod" class="delprodbtn">Delete Product</a>
+                                    <input type="submit" id="btnsavechanges" value="Save Changes">
+                                    <br><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+
+
+            <!-- Add Product Modal -->
+              <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addProductModal">Add Product</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add-product">
+                            <div class="row" id="add-row">
+                                <div>
+                                    <img id="product-pic" src="/images/grey.png" height="150" width="150"><br><br>
+                                </div>
+                            </div>
+                            <div class="row" id="add-row">
+                                <form class="formaddprod" method="post" action="/addproduct" enctype="multipart/form-data">
+                                    <input type="file" id="prodimgfile" name="filename" accept="image/png, image/jpeg, image/jpg"><br><br>
+                                    <label for="prodname">Product Name</label><br>
+                                    <input type="text" id="prodname" name="prodname" required><br><br>
+                                    <label for="prodmodel">Model</label><br>
+                                    <input type="text" id="prodmodel" name="prodmodel" required><br><br>
+                                    <label for="prodcat">Category</label><br>
+                                    <select id="prodcat" name="prodcat">
+                                        {{#each categories}}
+                                        <option value="{{this.categoryname}}">{{this.categoryname}}</option>
+                                        {{/each}}
+                                    </select><br><br>
+                                    <label for="prodcat">Brand</label><br>
+                                    <select id="prodcat" name="prodbrand">
+                                        {{#each brands}}
+                                        <option value="{{this.brandname}}">{{this.brandname}}</option>
+                                        {{/each}}
+                                    </select><br><br>
+                                    {{!-- <label for="proddesc">Product Description</label><br>
+                                    <input type="text" id="proddesc" name="proddesc"> --}}
+                                    <label>Product Description</label> <br>
+                                    <textarea name="proddesc" id="proddesc" wrap="soft" required></textarea>
+                                    <input type="submit" id="btnaddprod" value="Add Product">
+                                    <br><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Edit Product Categories and Brand Modal -->
+              <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editCategoriesandBrandModal">Edit Product Categories and Brand</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="catmodal">
+                            <form method="POST" action="/editCategBrand">
+                            <h5>Categories</h5>
+                            <div>
+                                Select a category to delete:
+                            </div>
+                            <div class="custom-cat">
+                                {{#each categories}}
+                                <input type="checkbox" name="categories" id="{{this.categoryname}}" class="cat-del" value="{{this.categoryname}}">
+                                <label for="{{this.categoryname}}" class="cat-label">{{this.categoryname}}</label>
+                                {{/each}}
+                            </div>
+                            <div>
+                                <label for="newcat">Add New Category</label>
+                                <input type="text" id="newcat" name="newcat"><br>
+                            </div>
+                                
+                        </div>
+                        <div class="brandmodal">
+                            <h5>Brands</h5>
+                            <div>
+                                Select a brand to delete: <br>
+                            </div>
+                            <div class="custom-brand">
+                                {{#each brands}}
+                                <input type="checkbox" name="brands" id="{{this.brandname}}" class="brand-del" value="{{this.brandname}}">
+                                <label for="{{this.brandname}}" class="cat-label">{{this.brandname}}</label>
+                                {{/each}}
+                            </div>
+                            <div>
+                                <label for="newbrand">Add New Brand</label>
+                                <input type="text" id="newbrand" name="newbrand"><br>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Save changes</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <script>
+            function changesSaved() {
+                alert('Changes Saved.');
+            }
+            function productAdded() {
+                alert('Product Added.');
+            }
+            function deleteProd(){
+                alert('Product succesfully deleted.');
+            }
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        {{!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> --}}
+        <script type="text/javascript" src="/js/delete.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

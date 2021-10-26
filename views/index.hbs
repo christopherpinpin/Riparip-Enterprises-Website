@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Landing</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+         
+        <link rel="stylesheet" href="../css/index2_css.css">
+        <link rel="stylesheet" href="../css/landing_css.css">
+        
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <div class="con">
+            <div class="sub_header">
+                <nav class="navbar navbar-expand-lg justify-content-between sub_header_box">
+                    <ul class="navbar-nav">
+                        <li class="nav-text pr-3">{{about.contact1}}</li>
+                        <li class="nav-text pr-3">{{about.contact2}}</li>
+                        <li class="nav-text">{{about.email}}</li>
+                    </ul>
+                    <a href="/about" class="nav-text" style="color: #000066;">About us</a>
+                </nav>
+                <div class="sub_header_line"></div>
+            </div>
+            
+            <div class="main_header_line"></div>
+            {{>mainheader}}
+            <div class="main_header_line"></div>
+
+            <section id="hero" class="d-flex align-items-center">
+                <div class="container" data-aos="zoom-out" data-aos-delay="100">
+                    <div>
+                        <h2> From chemicals and equipment to services,</h2>
+                        <h1> we got it all</h1>
+                    
+                    </div>
+                    
+                    <div class="smooth-scroll list-unstyled d-flex">
+                        <a href="#get_started" class="btn-get-started">GET STARTED</a>
+                    </div>
+                </div>
+            </section>
+            
+            <div id="get_started">
+                <div class="container-fluid px-5 py-5 d-flex flex-column align-items-center" id="aboutus_section" style="background-color: white;">
+                    <img src="../images/aboutus.png" style="width: 100px;">
+                    
+                    <h2 class="py-3" style="font-weight: 700;">Get to know us</h2>
+                    <h4 class="py-3 px-5 text-center">"{{about.slogan}}"</h4>
+                    <a href="/about">See more</a>
+                    
+                </div>
+                    <div class="container-fluid px-5 py-5 d-flex flex-column align-items-center" id="services_section" style="background-color: #f9f9f9;">
+                        <img src="../images/services.png" style="width: 100px;">
+                        <h2 class="py-3" style="font-weight: 700;">View our services</h2>
+                        <div class="container-fluid">
+                            <div class="row d-flex justify-content-center" style="overflow:hidden;min-width:100%;">
+                                {{#each services}}
+                                <div class="col-6 d-flex justify-content-center" style="min-width: 350px; max-width: 600px;">
+                                    <div class="readmore">
+                                        <img src="../images/services.png">
+                                        <div class="readmore_heading">
+                                            {{this.servicename}}
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-end" style="margin-top: 90px; margin-left: 25px;">
+                                            <form method="get" action="/services/{{this.servicename}}">
+                                            <button type="submit" class="btn_readmore"> Read more <i class="fa fa-angle-right px-2" style="font-weight: 800; font-size: 18px; color: #000066"></i></button>
+                                            </form>
+                                            <form method="post" action="/addservtocart/{{this.servicename}}">
+                                            <div class="addCartDiv">
+                                                <button onclick="location.href='/services'" type="button" class="add_cart_services">
+                                                    Inquire
+                                                </button>
+                                                <input type="hidden" value="{{this.servicename}}">
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                    </div>
+                    <a href="/services" class="mt-3">See more</a>
+                </div>
+                <div class="container-fluid px-5 py-5 d-flex flex-column align-items-center" id="aboutus_section" style="background-color: white;">
+                    <img src="../images/products.png" style="width: 100px;">
+                    
+                    <h2 class="py-3" style="font-weight: 700;">View our products</h2>
+                    
+                    <div class="row d-flex justify-content-center">
+                        
+                        {{#each products}}
+                        <div class="col-sm-4 col-lg-3 py-2">
+                            <div class="card h-100 product_card" style="border-radius: 15px;">
+                                <img src="{{prodpic}}" class="card-img-top px-3 py-3" alt="test">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="font-weight: 800; font-size: 15px;">{{productname}}</h5>
+                                    <p class="card-text" style="font-size: 13px;">{{productdesc}}</p>
+                                </div>
+                                <div class="card-footer d-flex justify-content-end align-items-center" style="border: none; background-color: white; border-radius: 15px;">
+                                    <button class="add_cart" data-toggle="modal" data-target="#myModal{{productname}}{{model}}">
+                                        Inquire
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="modal" id="myModal{{productname}}{{model}}">
+                            <div class="modal-dialog">
+                                <div class="modal-content text-center ">
+                            
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title" style="font-weight: 800;">{{productname}}</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                            
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div>
+                                    <label for="quantity">Quantity: </label>
+                                    <div>
+                                    <form method="post" action="/addprodtocart/{{productname}}/{{model}}">
+                                    </div><input class="item_select_qty" style="width: 100px; border-radius: 5px; border: solid 1px black; padding: 8px;"type="number" id="{{productname}}{{model}}qty" name="quantity" min="1">
+                                    </div>
+                                </div>
+                            
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button onclick="location.href='/products'" type="button" class="addProd">Add to cart</button>
+                                    <input type="hidden" value="{{productname}}">
+                                    <input type="hidden" value="{{model}}">
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <a href="/products" class="mt-3">See more</a>
+                    
+                </div>
+            </div>
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="/js/addcart.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

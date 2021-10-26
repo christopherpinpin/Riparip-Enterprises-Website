@@ -1,0 +1,92 @@
+.order_form{
+    background-color: white;
+    width: 100%;
+}
+
+
+.order_form input{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 15px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.order_form label{
+    margin-bottom: -10px;
+}
+
+.form_con{
+    width: 100%;
+}
+
+.checkout_product{
+    padding: 20px;
+    border: 1px solid #D1D1D1;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product_title{
+    padding-right: 20px;
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+#place_inquiry{
+    background-color: #000066;
+    color: white;
+
+    width: max-content;
+    padding: 5px 15px;
+    margin-top: 30px;
+
+    font-size: 15px;
+
+    border: none;
+    
+    border-radius: 15px;
+
+    font-weight: 800;
+
+    float: right;
+    position: relative;
+    
+    margin-bottom: 20px;
+}
+
+button:focus{
+    outline: none !important;
+}
+
+button:hover{
+   cursor: pointer;
+   opacity: 0.8;
+    transition: 0.2s;
+}
+
+a:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+input:focus{
+    outline: none !important;
+
+}
+
+.cart-items {
+    width: 500px;
+    max-height: 450px;
+    overflow-x: hidden;
+}

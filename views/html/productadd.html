@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add and Edit Products</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+         
+        <link rel="stylesheet" type="text/css" media="all" href="css/index2_css.css">
+        <link rel="stylesheet" href="css/productadd_css.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="con">
+            
+            <div class="main_header_line"></div>
+            <div class="main_header">
+                <nav class="navbar navbar-expand-lg">
+                    <a href="index.html"class="companyname">RIPARIP ENTERPRISES</a>
+            </div>
+            <div class="main_header_line"></div>
+            
+            <nav class="navbar navbar-expand-lg category">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#category_list" aria-controls="category_list" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" style="color: white;"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="category_list">
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="category_dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="category_dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Services
+                            </a>
+                        </li>
+                    </ul>  
+                </div>
+            </nav>
+
+            <div class="products-sec">
+                <h3>Products</h3>
+                <!-- Edit Product -->
+                <div class="row" id="prod-row">
+                    <a href="#modal1" data-toggle="modal" data-target="#modal1">
+                        <div class="card" id="card-style" style="width: 18rem;">
+                            <div class="product-card">
+                                <img class="card-img-top" id="product-pic" height="180" width="237" src="test_3/images/grey.png" alt="Card image cap">
+                                <div id="product-title">
+                                    <h5 class="card-title">Card title</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#modal1" data-toggle="modal" data-target="#modal1">
+                        <div class="card" id="card-style" style="width: 18rem;">
+                            <div class="product-card">
+                                <img class="card-img-top" id="product-pic" height="180" width="237" src="test_3/images/grey.png" alt="Card image cap">
+                                <div id="product-title">
+                                    <h5 class="card-title">Card title</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#modal1" data-toggle="modal" data-target="#modal1">
+                        <div class="card" id="card-style" style="width: 18rem;">
+                            <div class="product-card">
+                                <img class="card-img-top" id="product-pic" height="180" width="237" src="test_3/images/grey.png" alt="Card image cap">
+                                <div id="product-title">
+                                    <h5 class="card-title">Card title</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#modal1" data-toggle="modal" data-target="#modal1">
+                        <div class="card" id="card-style" style="width: 18rem;">
+                            <div class="product-card">
+                                <img class="card-img-top" id="product-pic" height="180" width="237" src="test_3/images/grey.png" alt="Card image cap">
+                                <div id="product-title">
+                                    <h5 class="card-title">Card title</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="row" id="prod-row">
+                    <a href="#modal1" data-toggle="modal" data-target="#modal1">
+                        <div class="card" id="card-style" style="width: 18rem;">
+                            <div class="product-card">
+                                <img class="card-img-top" id="product-pic" height="180" width="237" src="test_3/images/grey.png" alt="Card image cap">
+                                <div id="product-title">
+                                    <h5 class="card-title">Card title</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#modal1" data-toggle="modal" data-target="#modal1">
+                        <div class="card" id="card-style" style="width: 18rem;">
+                            <div class="product-card">
+                                <img class="card-img-top" id="product-pic" height="180" width="237" src="test_3/images/grey.png" alt="Card image cap">
+                                <div id="product-title">
+                                    <h5 class="card-title">Card title</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#modal1" data-toggle="modal" data-target="#modal1">
+                        <div class="card" id="card-style" style="width: 18rem;">
+                            <div class="product-card">
+                                <img class="card-img-top" id="product-pic" height="180" width="237" src="test_3/images/grey.png" alt="Card image cap">
+                                <div id="product-title">
+                                    <h5 class="card-title">Card title</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Add Product -->
+                    <a href="#modal2" data-toggle="modal" data-target="#modal2">
+                        <div class="card" id="card-style" style="width: 18rem;">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="edit-product">
+                            <div class="row" id="edit-row">
+                                <div>
+                                    <img id="product-pic" src="test_3/images/grey.png" height="150" width="150"><br><br>
+                                </div>
+                            </div>
+                            <div class="row" id="edit-row">
+                                <form method="post">
+                                    <input type="file" id="editimgfile" name="editimgfile"><br><br>
+                                    <label for="editprodname">Product Name</label><br>
+                                    <input type="text" id="editprodname" name="editprodname" value="Name of Product"><br><br>
+                                    <label for="editprodcat">Category</label><br>
+                                    <select id="editprodcat" name="editprodcat">
+                                        <option value="cat1">Category 1</option>
+                                        <option value="cat2">Category 2</option>
+                                        <option value="cat3">Category 3</option>
+                                        <option value="cat4">Category 4</option>
+                                    </select><br><br>
+                                    <label for="editproddesc">Product Description</label><br>
+                                    <input type="text" id="editproddesc" name="editproddesc" value="Description">
+                                    <a href="#" id="btndeleteprod" onclick="return confirm('This will permanently delete this product. Are you sure you want to delete this product?')">Delete Product</a>
+                                    <input type="submit" id="btnsavechanges" value="Save Changes">
+                                    <br><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add-product">
+                            <div class="row" id="add-row">
+                                <div>
+                                    <img id="product-pic" src="test_3/images/grey.png" height="150" width="150"><br><br>
+                                </div>
+                            </div>
+                            <div class="row" id="add-row">
+                                <form method="post">
+                                    <input type="file" id="prodimgfile" name="filename"><br><br>
+                                    <label for="prodname">Product Name</label><br>
+                                    <input type="text" id="prodname" name="prodname"><br><br>
+                                    <label for="prodcat">Category</label><br>
+                                    <select id="prodcat" name="prodcat">
+                                        <option value="cat1">Category 1</option>
+                                        <option value="cat2">Category 2</option>
+                                        <option value="cat3">Category 3</option>
+                                        <option value="cat4">Category 4</option>
+                                    </select><br><br>
+                                    <label for="proddesc">Product Description</label><br>
+                                    <input type="text" id="proddesc" name="proddesc">
+                                    <!-- <a href="#" id="btndeleteprod" onclick="return confirm('This will permanently delete this product. Are you sure you want to delete this product?')">Delete Product</a> -->
+                                    <input type="submit" id="btnaddprod" value="Add Product">
+                                    <br><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

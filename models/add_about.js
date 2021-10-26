@@ -1,0 +1,15 @@
+const db = require('./db.js');
+const collection = 'about';
+db.createDatabase();
+
+var about = {
+    logo: "",
+    aboutcompany: "RIPARIP ENTERPRISES is a supplier and distributor of chemicals such as Chlorine, DE Powder, Algaecide etc. and accessories for swimming pool. Such as DE or sand filter tank, pumps, skimmer, valves, etc. Maintenance chemical such as Descaling Chemicals (food grade and technical grade) for boiler, condenser, cooling tower. Cation /Anion resin for Water softener, and chemical for waste water treatment. Looking forward for expansion, the trading business ventured with engineering services and as it grows, is programmed to upgrade its capacity to be incorporated to widen its field of interest and opportunities. A direct importer of various items for more than 19 years. Thus, the marketing experience of its management and understanding in the needs of the target consumers is reliable. Riparip Enterprises has developed customers rapport and trust when it comes to the quality products and technical services. Dedicated to be a partner in water treatment and aims to be one of the most preferred and admired Industrial supplier of Maintenance Chemical and Industrial supplies in the market by providing the highest standard of customer service satisfaction, from sales to after sales service. We understand the urgency of the needs of our clients that is why we stand in our commitment in delivering our goods and service on the fastest possible time.",
+    slogan: "Our customer plays the vital role in our business, they deserve an excellent service",
+    aboutowner: "ENGR. HERMAN C. RIPARIP, a degree holder of Bachelor of Science in Mechanical Engineering. Passed the Board of Mechanical Engineer Licensure Examination on November 1990 and a Lifetime Member of the Philippine Society of Mechanical Engineers (Makati Chapter). He is the sole proprietor and general manager of Elsher Trading & HCR Engineering Services which is currently RIPARIP ENTERPRISES. He worked as a Barangay Electrician, Mechanical Draftsman, Sales Engineer, Supervising Technical Sales Engineer, and Project Manager from various companies engaged in repair of any kind of Steam Generator Boiler both Mechanical, Electrical and Civil works. Troubleshooting, Overhauling/ Calibration of Burners, Rewiring of controls, Conversion, Rehabilitation, Installation and Commissioning. Design, fabrication and installation of Mechanical Dryer, Piping, Elevated Water Storage, Fuel Storage Tank, Sewage Treatment Plant, Swimming Pool. With all the knowledge and skills, thru his education and work experiences he attained, he willfully formed his own business/company. Engaged in sales and engineering services such as consultant, contractor, designer, fabricator, supplier and boiler specialist.",
+    contact1: "+63 920 952 8517",
+    contact2: "+63 917 503 8016",
+    email: "riparipenterprises.ripen@gmail.com"
+}
+
+db.insertOne(collection, about);

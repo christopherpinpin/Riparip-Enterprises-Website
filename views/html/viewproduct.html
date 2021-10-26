@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>View Product</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+         
+        <link rel="stylesheet" href="../css/index2_css.css">
+        <link rel="stylesheet" href="../css/viewproduct_css.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="con">
+            <div class="sub_header">
+                <nav class="navbar navbar-expand-lg justify-content-between sub_header_box">
+                    <ul class="navbar-nav">
+                        <li class="nav-text pr-3">+63 920 952 8517</li>
+                        <li class="nav-text pr-3">+63 917 503 8016</li>
+                        <li class="nav-text">riparipenterprises.ripen@gmail.com</li>
+                    </ul>
+                    <a href="about.html" class="nav-text" style="color: #000066;">About us</a>
+                </nav>
+                <div class="sub_header_line"></div>
+            </div>
+            
+            <div class="main_header_line"></div>
+            <div class="main_header">
+                <nav class="navbar navbar-expand-lg">
+                    <a href="index.html"class="companyname">RIPARIP ENTERPRISES</a>
+                    <div class="form-inline my-0 my-lg-0 mr-auto search">
+                        <form action="">   
+                            <input class="form-control mr-auto"type="text" method="GET" name="search" placeholder="Search">
+                            <button type="submit" value="Search"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+
+                    <div class="navbar-nav">
+                        <div class="nav-item dropdown dropdown-cart-icon" >
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> 
+                                <i class="fa fa-shopping-cart" style="font-size: 25px; color: black;"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-cart" role="menu" >
+                                <li>
+                                    <input type="checkbox" id="cart_product" >
+                                    <label for="cart_product">
+                                        <span class="item">
+                                            <span class="item-left">
+                                                <img src="../images/test.png" style="width: 50px;" alt="" />
+                                                <span class="item-info">
+                                                    <span style="font-weight: 800;">Item name</span>
+                                                    <div style="padding: 10px 0px;">Model: </div>
+                                                    <div>Qty: <input class="item_select_qty" style="width:50px; border-radius: 5px; border: solid 1px black;"type="number" id="quantity" name="quantity" min="1"></div>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                    <span class="item-right">
+                                        <button class="fa fa-close" style="background-color: transparent; border: none;"></button>
+                                    </span>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="cart_service" >
+                                    <label for="cart_service">
+                                        <span class="item">
+                                            <span class="item-left">
+                                                <div style="font-weight: 800;">Service name</div>
+                                            </span>
+                                        </span>
+                                    </label>
+                                    <span class="item-right">
+                                        <button class="fa fa-close" style="background-color: transparent; border: none;"></button>
+                                    </span>
+                                </li>
+                                
+                                <li class="divider"></li>
+                                <li class="to_checkout"><a href="checkout.html">Check Out</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </nav>
+            </div>
+            <div class="main_header_line"></div>
+
+            <nav class="navbar navbar-expand-lg category">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#category_list" aria-controls="category_list" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" style="color: white;"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="category_list">
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html" >
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html" >
+                                Services
+                            </a>
+                        </li>
+                    </ul>  
+                </div>
+            </nav>
+            
+            <div class="container-fluid p-5" style="background-color: white;">
+                <div class="row">
+                    <div class="col-sm-4 mb-5">
+                        <img src="../images/test.png" style="width: inherit;" alt="" />
+                    </div>
+
+                    <div class="col-sm-8">
+                        <h3 style="font-weight: 700;">Product Title</h3>
+                        <div class="mt-3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </div>
+                        <div class="mt-3">
+                            <div class="product_model">Model:</div> <!-- remove niyo nalang kung di need -->
+                            <div>
+                                Model info
+                            </div>
+                        </div>
+                        <div class="product_info">
+                            <input class="viewitem_select_qty" style="width:100px;  padding: 10px; border-radius: 10px; border: solid 1px #e5e5e5;"type="number" id="quantity" name="quantity" min="1">
+                            <span>
+                                <button id="viewitem_addtocart">
+                                    Add to cart
+                                </button>
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="more">
+                    <h5 style="font-weight: 700;">More like this</h5>
+                    <div class="container-fluid content-row " style="background-color: white;">
+                        <div class="row d-flex justify-content-center">
+        
+                            <div class="col-sm-4 col-lg-3 py-2">
+                                <div class="card h-100 product_card" style="border-radius: 15px;">
+                                    <img src="../images/test.png" class="card-img-top px-3 py-3" alt="test">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="font-weight: 800; font-size: 15px;">Card title</h5>
+                                        <p class="card-text" style="font-size: 13px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-end align-items-center" style="border: none; background-color: white; border-radius: 15px;">
+                            
+                                        <button class="add_cart" data-toggle="modal" data-target="#myModal">
+                                            Inquire
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-sm-4 col-lg-3 py-2">
+                                <div class="card h-100 product_card" style="border-radius: 15px;">
+                                    <img src="../images/test.png" class="card-img-top px-3 py-3" alt="test">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="font-weight: 800; font-size: 15px;">Card title</h5>
+                                        <p class="card-text" style="font-size: 13px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-end align-items-center" style="border: none; background-color: white; border-radius: 15px;">
+                            
+                                        <button class="add_cart" data-toggle="modal" data-target="#myModal">
+                                            Inquire
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-sm-4 col-lg-3 py-2">
+                                <div class="card h-100 product_card" style="border-radius: 15px;">
+                                    <img src="../images/test.png" class="card-img-top px-3 py-3" alt="test">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="font-weight: 800; font-size: 15px;">Card title</h5>
+                                        <p class="card-text" style="font-size: 13px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-end align-items-center" style="border: none; background-color: white; border-radius: 15px;">
+                            
+                                        <button class="add_cart" data-toggle="modal" data-target="#myModal">
+                                            Inquire
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-lg-3 py-2">
+                                <div class="card h-100 product_card" style="border-radius: 15px;">
+                                    <img src="../images/test.png" class="card-img-top px-3 py-3" alt="test">
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="font-weight: 800; font-size: 15px;">Card title</h5>
+                                        <p class="card-text" style="font-size: 13px;">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-end align-items-center" style="border: none; background-color: white; border-radius: 15px;">
+                            
+                                        <button class="add_cart" data-toggle="modal" data-target="#myModal">
+                                            Inquire
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>   
+                </div>
+
+            </div>
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content text-center ">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="font-weight: 800;">Item name</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <div>
+                        <label for="quantity">Quantity: </label>
+                        <div>
+    
+                        </div><input class="item_select_qty" style="width: 100px; border-radius: 5px; border: solid 1px black; padding: 8px;"type="number" id="quantity" name="quantity" min="1">
+                      </div>
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="">Add to cart</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+
+</html>     

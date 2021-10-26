@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
+
+button{
+    font-family: 'Nunito', sans-serif;
+}
+
+html body{
+    background-color: #F9F9F9;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+    /*font-weight: 400;*/
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.sub_header button:focus{
+    outline: none !important;
+    outline-width: 0px;
+    
+}
+
+.con{
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    max-width: 1600px;
+    background-color: white;
+    margin: auto;
+}
+
+.navbar{
+    padding: 0px;
+}
+
+.category .navbar-nav .active a::after {
+    border-bottom: 5px solid white;
+    bottom: -8px;
+    font-weight: 800;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;   
+}
+
+.category .navbar-nav .active a{
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+.category .navbar-nav a:hover{
+    color: #D1D1D1;
+    
+}
+
+.sorting{
+    padding: 0px 0px;
+}
+
+
+.sorting a{
+    color: black;
+    font-weight: 700;
+
+    padding: 0px 0px;
+}
+
+.sorting li{
+    padding:  10px 10px;
+}
+
+
+.sorting .dropdown-menu a {
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px 5px;
+}
+
+.sorting button:focus{
+    outline: none !important;
+}
+
+.sorting .navbar-nav .active a::after {
+    border-bottom: 5px solid white;
+    bottom: -8px;
+    font-weight: 800;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;   
+}
+
+.sorting .navbar-nav .active a{
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+.sorting .navbar-nav a:hover{
+    color: #000066;
+    
+}
+
+.sorting .navbar-nav a:active{
+    background-color: white;
+}
+
+.sorting2 button{
+
+    background-color: white;
+    color: black;
+
+    width: max-content;
+    height: max-content;
+    padding: 5px 15px;
+    font-size: 15px;
+    margin: 5px 10px;;
+
+    border: none;
+    
+    border-radius: 15px;
+
+    border: 0.5px solid #D1D1D1;
+
+    font-weight: 800;
+}
+
+.sorting2 button:focus{
+    outline: none !important;
+}
+
+.sorting2_item{
+    display: flex;
+    min-width: 180px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.sorting2_item select{
+    width: 100px;
+    margin-left: 5px;
+}
+
+
+.navbar-nav > li {
+    float: left;
+    position: relative;
+  }
+
+.sub_header{
+    background-color: white;
+    height: max-content;
+
+    align-items: center;
+    font-size: 12px;
+}
+
+.sub_header_line{
+    margin: 0 20px;
+    height: 2px;
+    background-color: #F9F9F9;
+}
+
+.icon-arrow-down{
+    background-color: black;
+}
+
+
+.main_header{
+    background-color: white;
+
+    font-size: 12px;
+
+    z-index: 100;
+
+    position: sticky;
+    position: -webkit-sticky;
+    top: -1px;
+}   
+
+.main_header a, .main_header a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.companyname{
+    font-size: 32px;
+    font-weight: 800;
+
+    padding-right: 30px;
+}
+
+.main_header_line{
+    width: 100%;
+    background-color: white;
+    padding-top: 10px;
+}
+
+.search{
+    margin-right: 0px;
+}
+
+.search input{
+    position: relative;
+    height: 30px;
+    width: 150px;
+
+    top: 0px;
+
+    /* C1/H */
+
+    background: #F9F9F9;
+    /* C1/D */
+
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    padding-right: 30px;
+    padding-left: 10px;
+
+    font-size: 12px;
+}
+
+.search input:focus{
+    outline: none;
+}
+
+.search button{
+    background-color:transparent;
+    border: none;
+
+    position: relative;
+
+    left: -30px;
+}
+
+.search form{
+    display:flex;
+    flex-direction:row;
+    
+
+  /* I've used padding so you can see the edges of the elements. */
+    padding:2px;
+}
+
+.content1{
+    height: 100px;
+    background-color: white;
+
+    position: relative;
+    width: inherit;
+}
+
+.category{
+    background-color:#000066;
+}
+
+
+.category a{
+    color: white;
+    font-weight: 700;
+
+    padding: 3px 100px;
+}
+
+.category li{
+    padding: 0px 20px;
+}
+
+.category .dropdown-menu a {
+    color: black;
+    font-weight: 700;
+}
+
+.category button:focus{
+    outline: none !important;
+}
+
+.category2{
+    background-color:white;
+}
+
+
+.category2 a{
+    color: #000066;
+    font-weight: 700;
+
+    padding: 3px 100px;
+}
+
+.category2 li{
+    padding: 0px 20px;
+}
+
+.category2 .dropdown-menu a {
+    color: black;
+    font-weight: 700;
+}
+
+.category2 button:focus{
+    outline: none !important;
+}
+
+
+.home_body{
+    width: inherit;
+    height: 1000px;
+    background-color: white;
+}
+
+.sort li{
+    border:none;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #000066;
+}
+
+
+.brand_dropdown button{
+    background-color: #F9F9F9;
+    color: black;
+
+    width: max-content;
+    padding: 10px 15px;
+    margin-top: 10px;
+
+    font-size: 15px;
+
+    border: none;
+    border-radius: 15px;
+
+    font-weight: 600;
+}
+
+.brand_dropdown button:focus{
+    outline: none !important;
+}
+
+.brand_dropdown .dropdown-toggle::after {
+    display: none;
+}
+
+
+
+.product_card button, .modal-footer button{
+
+    background-color: #000066;
+    color: white;
+
+    
+    width: max-content;
+    padding: 5px 15px;
+    margin-top: 10px;
+
+    font-size: 15px;
+
+    border: none;
+    
+    border-radius: 15px;
+
+    font-weight: 800;
+}
+
+.product_card button:focus{
+    outline: none !important;
+}
+
+.product_card:hover{
+    transition: 0.2s;
+    transform: scale(1.02);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.dropdown-cart-icon .dropdown-menu{
+    
+    padding: 20px;
+    
+}
+
+ul.dropdown-cart{
+    border: 2px solid #D1D1D1;
+    padding: 2px;
+    margin: 7px;
+    margin-top: 11px;
+}
+
+.dropdown-cart-icon .dropdown-toggle::after {
+    display: none;
+}
+
+ul.dropdown-cart li .item{
+    display:block;
+    padding:15px 15px;
+    margin: 3px 0;
+
+    width: 250px;
+
+    border-bottom: 2px solid #D1D1D1;
+}
+
+ul.dropdown-cart li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul.dropdown-cart li .item:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+ul.dropdown-cart li .item-left{
+    float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+    float:left;
+} 
+ul.dropdown-cart li .item-left span.item-info{
+    margin-left:10px;   
+}
+ul.dropdown-cart li .item-left span.item-info span{
+    display:block;
+}
+ul.dropdown-cart li .item-right{
+    float:right;
+    height: max-content
+}
+
+
+.to_checkout a{
+    background-color: #000066;
+    padding: 10px 15px;
+
+    color: white;
+
+    border-radius: 10px;
+    
+}
+
+li.to_checkout{
+    padding: 20px 0px;
+}
+
+.item-right button:focus{
+    outline: none !important;
+}
+
+.modal-footer button:focus{
+    outline: none !important;
+}
+
+#myModal .modal-dialog{
+    max-width: 400px;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+ }
+
+ a:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+#dropd-layout {
+    max-height: 700px;
+    overflow-x: hidden;
+}
+
+

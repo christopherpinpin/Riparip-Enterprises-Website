@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add and Edit Services</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+         
+        <link rel="stylesheet" type="text/css" media="all" href="/css/index2_css.css">
+        <link rel="stylesheet" href="/css/serviceadd_css.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="con">
+            
+            <div class="main_header_line"></div>
+            <div class="main_header">
+                <nav class="navbar navbar-expand-lg">
+                    <a href="/"class="companyname">RIPARIP ENTERPRISES</a>
+            </div>
+            <div class="main_header_line"></div>
+            
+            <nav class="navbar navbar-expand-lg category">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#category_list" aria-controls="category_list" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" style="color: white;"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="category_list">
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/products" id="category_dropdown" role="button">
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/services" id="category_dropdown" role="button">
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/about" id="category_dropdown" role="button">
+                                About Us
+                            </a>
+                        </li>
+                    </ul>  
+                </div>
+            </nav>
+
+            <div class="services-sec content-row py-5 px-5">
+                <div class="row" id="top-texts">
+                    <h3>Services</h3>
+                </div>
+
+            
+                <div class="row">
+                    <!-- Add Service -->
+                    <div class="col-sm-4 col-lg-3 py-2">
+                        <div class="card" id="card-style">
+                            <a href="#modal2" data-toggle="modal" data-target="#modal2">
+                                <div class="add">
+                                <i class="fa fa-plus" id="add-icon" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Edit Service -->
+                    {{#each services}}
+                    <div class="col-sm-4 col-lg-3 py-2">
+                        <div class="card" id="card-style">
+                            <a href="#{{this.servicename}}" data-toggle="modal" data-target="#{{this.servicename}}">
+                                <div class="service-card-details">
+                                    {{!-- <span class="service-subheading">Subheading</span> --}}
+                                    <span class="service-title">{{this.servicename}}</span>
+                                    <span class="service-desc">{{this.servicedesc}}</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    {{/each}}
+                </div>
+            </div>
+
+        <!-- Edit Service Modal -->
+            <!-- NOTE: Add to each handlebars edit service -->
+            {{#each services}}
+            <div class="modal fade" id="{{this.servicename}}" tabindex="-1" role="dialog" aria-labelledby="{{this.servicename}}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editServiceModal">Edit Service</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="edit-service">
+                            <div class="row" id="edit-row">
+                                <form method="post" action="/editservice/{{this.servicename}}">
+                                    <label for="editservname">Service Name</label><br>
+                                    <input type="text" id="editservname" name="editservname" value="{{this.servicename}}"><br><br>
+                                    <label>Service Description</label> <br>
+                                    <textarea name="editservdesc" id="editservdesc" wrap="soft">{{this.servicedesc}}</textarea>
+                                    <a href="/admin/services" id="btndeleteserv" class="delservbtn" onclick="deleteServ()">Delete Service</a>
+                                    <input type="submit" id="btnsavechanges" value="Save Changes">
+                                    <br><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+            
+
+            <!-- Add Service Modal -->
+              <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addServiceModal">Add Service</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="add-service">
+                            <div class="row" id="add-row">
+                                <form method="post" action="/addservice">
+                                    <label for="servname">Service Name</label><br>
+                                    <input type="text" id="servname" name="servname" required><br><br>
+                                    <label>Service Description</label> <br>
+                                    <textarea name="servdesc" id="servdesc" wrap="soft" required></textarea>
+                                    <input type="submit" id="btnaddserv" value="Add Service">
+                                    <br><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Edit Product Categories Modal -->
+              {{!-- <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editCatandBrandModal">Edit Product Categories and </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="catmodal">
+                            <h5>Categories</h5>
+                            <div>
+                                Select a category to delete:
+                            </div>
+                            <div class="custom-cat">
+                                <input type="checkbox" name="categories" id="categoryid1" class="cat-del" value="Category 1">
+                                <label for="categoryid1" class="cat-label">Category 1</label>
+
+                                <input type="checkbox" name="categories" id="categoryid2" class="cat-del" value="Category 1">
+                                <label for="categoryid2" class="cat-label">Category 2</label>
+
+                                <input type="checkbox" name="categories" id="categoryid3" class="cat-del" value="Category 1">
+                                <label for="categoryid3" class="cat-label">Category 3</label>
+
+                                <input type="checkbox" name="categories" id="categoryid4" class="cat-del" value="Category 1">
+                                <label for="categoryid4" class="cat-label">Category 4</label>
+                            </div>
+                            <div>
+                                <label for="newcat">Add New Category</label>
+                                <input type="text" id="newcat" name="newcat"><br>
+                            </div>
+                                
+                        </div>
+                        <div class="brandmodal">
+                            <h5>Brands</h5>
+                            <div>
+                                Select a brand to delete: <br>
+                            </div>
+                            <div class="custom-brand">
+                                <input type="checkbox" name="brands" id="brandid1" class="brand-del" value="Category 1">
+                                <label for="brandid1" class="cat-label">Brand 1</label>
+
+                                <input type="checkbox" name="brands" id="brandid2" class="brand-del" value="Category 1">
+                                <label for="brandid2" class="cat-label">Brand 2</label>
+
+                                <input type="checkbox" name="brands" id="brandid3" class="brand-del" value="Category 1">
+                                <label for="brandid3" class="cat-label">Brand 3</label>
+
+                                <input type="checkbox" name="brands" id="brandid4" class="brand-del" value="Category 1">
+                                <label for="brandid4" class="cat-label">Brand 4</label>
+                            </div>
+                            <div>
+                                <label for="newbrand">Add New Brand</label>
+                                <input type="text" id="newbrand" name="newbrand"><br>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div> --}}
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        {{!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> --}}
+        <script type="text/javascript" src="/js/delete.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,257 @@
+.products-sec{
+    align-items: center;
+    align-self: center;
+    padding-bottom: 80px;
+}
+
+.products-sec h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+#top-texts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#edit-cat-text, #edit-brand-text {
+    color: #000066;
+    margin-top: 12px;
+
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Row of Products */
+
+#card-style {
+    display: flex;
+    flex-direction: column;
+
+    background: #FFFFFF;
+
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    position: relative;
+    height: 310px;
+    left: 0px;
+    top: 10px;
+}
+
+#card-style :hover{
+    text-decoration: none;
+}
+
+.product-card-details {
+    margin: 20px 20px;
+    height: 260px;
+}
+
+.product-card-details div {
+    margin-bottom: 10px;
+}
+
+.product-pic {
+    position: static;
+    width: 180px;
+    height: 237px;
+    margin-bottom: 10px;
+}
+
+#product-pic {
+    object-fit: cover;
+}
+
+#product-title {
+    color: black;
+
+    font-style: normal;
+    font-weight: 800;
+    height: fit-content;
+    font-size: 20px;
+}
+
+#product-model {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000066;
+}
+
+#add-icon {
+    position: relative;
+    margin-top: 100px;
+    font-size: 100px;
+    /* width: 74px; */
+    height: 260px;
+    color:rgba(0, 0, 0, 0.62);
+
+    left: calc(50% - 74px/2);
+    top: calc(50% - 74px/2);
+}
+
+/* Edit and Add Products Modal */
+
+#edit-row, #add-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+#edit-row input, #add-row input, #edit-row select, #add-row select, #edit-row textarea, #add-row textarea {
+    outline: none;
+}
+
+#editprodname, #editprodcat, #editprodbrand, #prodname, #prodcat, #editprodmodel, #prodmodel {
+    width: 362px;
+    height: 50px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 0px 14px 0px;
+}
+
+#editproddesc, #proddesc{
+    width: 362px;
+    height: 130px;
+    
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 12px;
+    
+    resize: none;
+    padding: 10px 14px 0px;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #000066;
+    border-radius: 12px;
+    font-size: 20px;
+    color: #e9f4fb;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover{
+    border-color: #000066;
+    transition: .5s;
+}
+
+#btndeleteprod {
+    position:static;
+    width: 362px;
+    height: 52px;
+    border: 1px solid;
+    background: #CA0D0D;
+    border-radius: 12px;
+    font-size: 20px;
+    color: #e9f4fb;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#btndeleteprod:hover {
+    border-color: #CA0D0D;
+    transition: .5s;
+    text-decoration: none;
+}
+
+#btnaddprod {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Edit Categories and Brands Modal */
+
+.catmodal div, .brandmodal div {
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.catmodal label, .brandmodal label {
+    font-weight: 500;
+}
+
+#newcat, #newbrand {
+    width: fit-content;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+}
+
+.custom-cat, .custom-brand {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.custom-cat label, .custom-brand label {
+    width: 120px;
+    height: 31px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: inset 0 0 0 0 #CA0D0D;
+    transition: ease-out 0.3s;
+
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-cat label:hover, .custom-brand label:hover {
+    color: white;
+    transition: ease-out 0.3s;
+    font-weight: 500;
+    font-size: 14px;
+
+    box-shadow: inset 120px 0 0 0 #CA0D0D;
+    cursor: pointer;
+}
+
+.cat-del, .brand-del {
+    visibility: hidden;
+    position: absolute;
+}
+
+.cat-del:checked + label, .brand-del:checked + label {
+    color:white;
+    box-shadow: inset 120px 0 0 0 #CA0D0D;
+    outline: none;
+}
